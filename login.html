@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Définir la taille de l'image dans l'historique */
+.history-image {
+    width: 15%; /* ou toute autre taille que vous souhaitez */
+}
+
+    </style>
+</head>
+
+
+<script src="script.js"></script>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <label for="firstName">Votre prénom:</label>
+        <input type="text" id="firstName" placeholder="Entrez votre prénom">
+        <button onclick="saveName()">Se connecter</button>
+        <button onclick="deleteName()">Supprimer le nom d'utilisateur</button> <!-- Bouton de suppression -->
+    </div>
+    <div id="favorite-pages">
+        <!-- Cet élément sera utilisé pour afficher les liens des pages favorites -->
+    </div>
+    <script src="script.js"></script>
+
+    !-- Script JavaScript pour récupérer et afficher les pages favorites -->
+    <script>
+        // Récupérer les pages favorites du stockage local du navigateur
+        const favoritePages = JSON.parse(localStorage.getItem('favoritePages')) || [];
+
+        // Afficher les liens des pages favorites
+        const favoritePagesContainer = document.getElementById('favorite-pages');
+        favoritePagesContainer.innerHTML = '<h2>Favoris</h2>';
+        if (favoritePages.length > 0) {
+            const favoritePagesList = document.createElement('ul');
+            favoritePages.forEach(page => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = page.url;
+                link.textContent = page.title;
+                listItem.appendChild(link);
+                favoritePagesList.appendChild(listItem);
+            });
+            favoritePagesContainer.appendChild(favoritePagesList);
+        } else {
+            favoritePagesContainer.innerHTML += '<p>Aucune page en favori.</p>';
+        }
+    </script>
+
+    <!-- Rubrique historique -->
+<h1>Historique des pages visitées</h1>
+<div id="history"></div>
+
+<script>
+    // Récupérer l'historique depuis le stockage local
+    const history = JSON.parse(localStorage.getItem('pageHistory')) || [];
+
+    // Sélectionner l'élément où afficher l'historique
+    const historyContainer = document.getElementById('history');
+
+    // Parcourir l'historique et générer le contenu HTML
+    history.forEach(page => {
+        const pageItem = document.createElement('div');
+        pageItem.innerHTML = `
+            <a href="${page.url}">
+                <img class="history-image" src="${page.image}" alt="${page.title}">
+                <h3>${page.title}</h3>
+            </a>
+        `;
+        historyContainer.appendChild(pageItem);
+    });
+</script>
+</body>
+
+</html>

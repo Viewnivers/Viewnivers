@@ -53,14 +53,15 @@
 
           <select name="language" id="language">
             <option value="en">FR</option>
-            <option value="au">AU</option>
-            <option value="ar">AR</option>
-            <option value="tu">TU</option>
+            
           </select>
         </div>
 
-        <button class="btn btn-primary">Sign in</button>
-
+        <button class="btn btn-primary" onclick="window.location.href='login.html'">
+          <span id="loginButtonLabel">Se connecter</span>
+      </button>
+  
+      <script src="script.js"></script>
       </div>
 
       <button class="menu-open-btn" data-menu-open-btn>
@@ -565,7 +566,56 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    // Récupérer l'élément contenant l'image
+    const imageElement = document.querySelector('.movie-detail-banner img');
 
+    // Vérifier si l'élément existe et qu'il contient une source d'image
+    if (imageElement && imageElement.src) {
+        // Récupérer l'URL de l'image
+        const imageUrl = imageElement.src;
+
+        // Récupérer les données de la page actuelle
+        const currentPage = {
+            title: document.title, // Titre de la page
+            url: window.location.href, // URL de la page
+            image: imageUrl // URL de l'image
+        };
+
+        // Récupérer l'historique existant depuis le stockage local
+        const history = JSON.parse(localStorage.getItem('pageHistory')) || [];
+
+        // Ajouter la page actuelle à l'historique
+        history.push(currentPage);
+
+        // Limiter l'historique à une certaine taille (par exemple, 10 pages)
+        const maxSize = 10;
+        if (history.length > maxSize) {
+            history.splice(0, history.length - maxSize);
+        }
+
+        // Mettre à jour le stockage local avec le nouvel historique
+        localStorage.setItem('pageHistory', JSON.stringify(history));
+        // Récupérer l'image à partir des cookies
+const imageFromCookie = document.cookie.split('; ').find(row => row.startsWith('image='));
+const imageURL = imageFromCookie ? imageFromCookie.split('=')[1] : '';
+
+// Sélectionner l'élément où vous voulez ajouter l'image dans la section d'historique
+const historySection = document.querySelector('#history-section');
+
+// Créer un élément d'image et lui attribuer l'URL récupéré
+const imageElement = document.createElement('img');
+imageElement.src = imageURL;
+imageElement.alt = 'Image from history';
+
+// Ajouter la classe CSS pour ajuster la taille de l'image
+imageElement.classList.add('history-image');
+
+// Ajouter l'image à la section d'historique
+historySection.appendChild(imageElement);
+    }
+    
+</script>
 </body>
 
 </html>

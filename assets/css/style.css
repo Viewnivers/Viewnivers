@@ -1600,3 +1600,7 @@ body.active { overflow: hidden; }
   }
 
 }
+/* Définir la taille de l'image dans l'historique */
+.history-image {
+  width: 50%; /* ou toute autre taille que vous souhaitez */
+}
