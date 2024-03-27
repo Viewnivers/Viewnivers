@@ -1604,3 +1604,11 @@ body.active { overflow: hidden; }
 .history-image {
   width: 50%; /* ou toute autre taille que vous souhaitez */
 }
+
+.heart-icon {
+  color: black; /* Couleur du cœur vide par défaut */
+}
+
+.favorite .heart-icon {
+  color: red; /* Couleur du cœur rempli lorsque le film est en favori */
+}

@@ -201,12 +201,16 @@
 
                   <time datetime="2021">2023</time>
                 </div>
-
+                <button class="btn btn-primary" onclick="addToFavorites()">
+                  <ion-icon name="heart-outline" class="heart-icon"></ion-icon>
+                  <span id="addToFavoritesText">Ajouter aux favoris</span>
+              </button>
                 <div>
                   <ion-icon name="time-outline"></ion-icon>
 
                   <time datetime="PT115M">181 min</time>
                 </div>
+
                 <p class="storyline">
                     En 1942, convaincus que l’Allemagne nazie est en train de développer une arme nucléaire, les États-Unis initient, dans le plus grand secret, le "Projet Manhattan" destiné à mettre au point la première bombe atomique de l’histoire. Pour piloter ce dispositif, le gouvernement engage J. Robert Oppenheimer, brillant physicien, qui sera bientôt surnommé "le père de la bombe atomique". C’est dans le laboratoire ultra-secret de Los Alamos, au cœur du désert du Nouveau-Mexique, que le scientifique et son équipe mettent au point une arme révolutionnaire dont les conséquences, vertigineuses, continuent de peser sur le monde actuel…
                   </p>
@@ -331,7 +335,75 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    // Récupérer l'URL de l'image du film
+    const movieImage = document.querySelector('.movie-detail-banner img').src;
+    // Récupérer les données existantes des favoris depuis le stockage local
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    // Vérifier si le film actuel est déjà dans les favoris
+    const isAlreadyFavorite = favorites.some(favorite => favorite.image === movieImage);
+    // Sélectionner l'icône du cœur
+    const heartIcon = document.querySelector('.heart-icon');
+    // Sélectionner le texte du bouton "Ajouter aux favoris"
+    const addToFavoritesText = document.getElementById('addToFavoritesText');
+    // Mettre à jour l'icône et le texte du bouton en conséquence
+    if (isAlreadyFavorite) {
+        heartIcon.setAttribute('name', 'heart');
+        addToFavoritesText.textContent = 'Retirer des favoris';
+    } else {
+        heartIcon.setAttribute('name', 'heart-outline');
+        addToFavoritesText.textContent = 'Ajouter aux favoris';
+    }
+});
 
+function addToFavorites() {
+  
+    // Récupérer l'URL de la page en cours
+    const pageURL = window.location.href;
+    // Récupérer l'URL de l'image du film
+    const movieImage = document.querySelector('.movie-detail-banner img').src;
+
+    // Créer un objet contenant les données du film
+    const movieData = {
+        image: movieImage,
+        url: pageURL
+    };
+
+    // Récupérer les données existantes des favoris depuis le stockage local
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // Vérifier si le film est déjà dans les favoris
+    const isAlreadyFavorite = favorites.some(favorite => favorite.image === movieData.image);
+
+    // Sélectionner l'icône du cœur
+    const heartIcon = document.querySelector('.heart-icon');
+
+    // Sélectionner le texte du bouton "Ajouter aux favoris"
+    const addToFavoritesText = document.getElementById('addToFavoritesText');
+
+    // Si le film est déjà dans les favoris, le supprimer et mettre à jour l'icône et le texte
+    if (isAlreadyFavorite) {
+        // Retirer le film de la liste des favoris
+        favorites = favorites.filter(favorite => favorite.image !== movieData.image);
+        // Mettre à jour l'icône du cœur en cœur vide
+        heartIcon.setAttribute('name', 'heart-outline');
+        // Mettre à jour le texte du bouton "Ajouter aux favoris"
+        addToFavoritesText.textContent = 'Ajouter aux favoris';
+    } else {
+        // Ajouter les données du film à la liste des favoris
+        favorites.push(movieData);
+        // Mettre à jour l'icône du cœur en cœur plein
+        heartIcon.setAttribute('name', 'heart');
+        // Mettre à jour le texte du bouton "Ajouter aux favoris"
+        addToFavoritesText.textContent = 'Retirer des favoris';
+    }
+
+    // Enregistrer la liste mise à jour des favoris dans le stockage local
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+</script>
 </body>
 
 </html>

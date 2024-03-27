@@ -32,7 +32,11 @@ h1 {
   font-family: 'Poppins', sans-serif;
 }
 
+h2{
 
+  color: #FF8C00;
+  font-family: 'Poppins', sans-serif;
+}
 
 label {
   
@@ -105,7 +109,7 @@ button + button {
 }
 
 #history-content img {
-  width: 100px;
+  width: 125px;
   height: auto;
   border-radius: 5px;
 }
@@ -114,6 +118,29 @@ button + button {
   margin-top: 5px;
   text-align: center;
 }
+
+#favorite-pages img {
+  width: 125px;
+  height: auto;
+  border-radius: 5px;
+ 
+}
+
+#favorite-pages p {
+  margin-top: 5px;
+  text-align: center;
+  
+}
+#favorite-pages {
+    display: flex; /* Utiliser un affichage flex */
+    flex-direction: row; /* Aligner les éléments horizontalement */
+}
+
+.favorite-item {
+  margin-right: 20px; /* Espacement entre chaque favori */
+}
+
+
 :root {
 
 /**
@@ -175,9 +202,9 @@ button + button {
         <button onclick="deleteName()">Supprimer le nom d'utilisateur</button> <!-- Bouton de suppression -->
         <button onclick="clearData()">Supprimer les favoris et l'historique</button> <!-- Bouton pour supprimer les favoris et l'historique -->
     </div>
+    <h2>Vos favoris</h2>
     <div id="favorite-pages">
-        <!-- Cet élément sera utilisé pour afficher les liens des pages favorites -->
-        
+      <!-- Là où les favoris seront affichés -->
     </div>
    
    <!-- Section historique -->
@@ -188,6 +215,25 @@ button + button {
     </div>
 
     <script>
+
+
+ // Récupérer les données des favoris depuis le stockage local
+ const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+// Sélectionner l'élément où vous souhaitez afficher les favoris
+const favoritePages = document.getElementById('favorite-pages');
+
+// Parcourir les données des favoris et les afficher
+favorites.forEach(favorite => {
+    const favoriteItem = document.createElement('div');
+    favoriteItem.classList.add('favorite-item'); // Ajouter une classe pour la mise en page
+    favoriteItem.innerHTML = `
+        <a href="${favorite.url}">
+            <img class="history-image" src="${favorite.image}" alt="">
+        </a>
+    `;
+    favoritePages.appendChild(favoriteItem);
+})
         // Récupérer les données de la page "Cars Lecteur" depuis le stockage local
         const pageData = JSON.parse(localStorage.getItem('pageData'));
 
