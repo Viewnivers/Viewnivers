@@ -9,13 +9,13 @@
   <br />
   <br />
   
-  <img src="./readme-images/project-logo.png" />
+  <img src="./readme-images/logo.png" />
 
-  <h2 align="center">Filmlane - Movie website</h2>
+  <h2 align="center">Viewnivers - Movie website</h2>
 
-  Filmlane is a fully responsive movie website page, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
+  
 
-  <a href="https://codewithsadee.github.io/filmlane/"><strong>➥ Live Demo</strong></a>
+  <a href=""><strong></strong></a>
 
 </div>
 
