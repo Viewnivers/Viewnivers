@@ -999,8 +999,8 @@ body.active { overflow: hidden; }
 
 .details-actions {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px 40px;
   max-width: 460px;
   background: var(--gunmetal-2);
