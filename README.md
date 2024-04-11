@@ -1,10 +1,15 @@
 <div align="center">
   
-  
+  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/filmlane)
+  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/filmlane?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/filmlane?style=social)
+[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
+  [![YouTube Video Views](https://img.shields.io/youtube/views/G-mEhvhWyw8?style=social)](https://youtu.be/G-mEhvhWyw8)
+
   <br />
   <br />
   
-  <img src="./assets/images/logo.png" alt="Image" style="width:95px;height:90px;">
+  <img src="./readme-images/logo.png" />
 
   <h2 align="center">Viewnivers - Movie website</h2>
 
@@ -17,9 +22,8 @@
 <br />
 
 ### Demo Screeshots
-<img src="./assets/images/desktop.png" alt="Image" >
 
-
+![Filmlane Desktop Demo](./readme-images/desktop.png "Desktop Demo")
 
 ### Prerequisites
 
