@@ -4,7 +4,7 @@
   <br />
   <br />
   
-  <img src="./assets/images/logo.png" / style="width:65px;height:60px;">
+  <img src="./assets/images/logo.png" / alt=image style="width:65px;height:60px;">
 
   <h2 align="center">Viewnivers - Movie website</h2>
 
