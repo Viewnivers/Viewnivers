@@ -17,7 +17,7 @@
 <br />
 
 ### Demo Screeshots
-<img src="../assets/images/desktop.png" alt="Image" >
+<img src="./assets/images/desktop.png" alt="Image" >
 
 
 
