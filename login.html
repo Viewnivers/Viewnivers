@@ -9,194 +9,169 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Définir la taille de l'image dans l'historique */
-        .history-image {
-            width: 15%; /* ou toute autre taille que vous souhaitez */
-        }
-        /* Custom CSS for login section */
-
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: hsl(225, 25%, 9%);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #FF8C00;
-  font-family: 'Poppins', sans-serif;
-}
-
-h2{
-
-  color: #FF8C00;
-  font-family: 'Poppins', sans-serif;
-}
-
-label {
+   
+      <style>
+          /* Définir la taille de l'image dans l'historique */
+          .history-image {
+              width: 125px; /* ou toute autre taille que vous souhaitez */
+              height: auto;
+              border-radius: 5px;
+          }
   
+          /* Custom CSS for login section */
+          .container {
+              max-width: 400px;
+              margin: 0 auto;
+              padding: 20px;
+              background-color: hsl(225, 25%, 9%);
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
   
-  color: #FF8C00;
-  font-family: 'Poppins', sans-serif;   
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-body {
-  background-color: hsl(225, 25%, 9%);; /* Remplacez #f0f0f0 par la couleur de fond que vous souhaitez */
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #FF8C00;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #ffbb00;
-}
-
-button + button {
-  margin-top: 10px;
-}
-
-#favorite-pages {
-  margin-top: 20px;
-}
-
-#history-section {
-  margin-top: 40px;
-}
-
-#history-section h2 {
-  margin-bottom: 10px;
-  color: #FF8C00;
-  font-family: 'Poppins', sans-serif;
-}
-
-#history-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-#history-content a {
-  text-decoration: none;
-  color: #FF8C00;
-  font-family: 'Poppins', sans-serif;
-}
-
-#history-content img {
-  width: 125px;
-  height: auto;
-  border-radius: 5px;
-}
-
-#history-content p {
-  margin-top: 5px;
-  text-align: center;
-}
-
-#favorite-pages img {
-  width: 125px;
-  height: auto;
-  border-radius: 5px;
- 
-}
-
-#favorite-pages p {
-  margin-top: 5px;
-  text-align: center;
+          h1 {
+              text-align: center;
+              margin-bottom: 20px;
+              color: #FF8C00;
+              font-family: 'Poppins', sans-serif;
+          }
   
-}
-#favorite-pages {
-    display: flex; /* Utiliser un affichage flex */
-    flex-direction: row; /* Aligner les éléments horizontalement */
-}
-
-.favorite-item {
-  margin-right: 20px; /* Espacement entre chaque favori */
-}
-
-
-:root {
-
-/**
- * typography
- */
-
---fs-1: 60px;
---fs-4: 26px;
-
-}
-.cta { text-align: left; }
-
-.cta .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cta .title-wrapper {
-  margin-bottom: 0;
-  width: 100%;
-}
-
-.cta-form {
-  margin-inline: 0;
-  max-width: unset;
-  width: 100%;
-}
-
-  /**
-   * FOOTER
-   */
-
-   .footer-brand-wrapper .logo { margin: 0; }
-
-.footer-brand-wrapper,
-.quicklink-wrapper,
-.footer-bottom .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.quicklink-list { margin-bottom: 0; }
-
-.copyright { margin-bottom: 0; }
-
-.footer-bottom-img { margin-inline: 0; }
-
-    </style>
-</head>
+          h2 {
+              color: #FF8C00;
+              font-family: 'Poppins', sans-serif;
+          }
+  
+          label {
+              color: #FF8C00;
+              font-family: 'Poppins', sans-serif;
+          }
+  
+          label {
+              display: block;
+              margin-bottom: 10px;
+          }
+  
+          body {
+              background-color: hsl(225, 25%, 9%);
+          }
+  
+          input[type="text"] {
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 20px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+          }
+  
+          button {
+              width: 100%;
+              padding: 10px;
+              background-color: #FF8C00;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+          }
+  
+          button:hover {
+              background-color: #ffbb00;
+          }
+  
+          button + button {
+              margin-top: 10px;
+          }
+  
+          #favorite-pages {
+              margin-top: 20px;
+              display: flex;
+              gap: 20px;
+              flex-wrap: wrap;
+          }
+  
+          #history-section {
+              margin-top: 40px;
+          }
+  
+          #history-section h2 {
+              margin-bottom: 10px;
+              color: #FF8C00;
+              font-family: 'Poppins', sans-serif;
+          }
+  
+          #history-content {
+              display: flex;
+              gap: 20px;
+              flex-wrap: wrap;
+          }
+  
+          #history-content a {
+              text-decoration: none;
+              color: #FF8C00;
+              font-family: 'Poppins', sans-serif;
+              text-align: center;
+          }
+  
+          #history-content p {
+              margin-top: 5px;
+          }
+  
+          :root {
+              --fs-1: 60px;
+              --fs-4: 26px;
+          }
+  
+          .cta {
+              text-align: left;
+          }
+  
+          .cta .container {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+  
+          .cta .title-wrapper {
+              margin-bottom: 0;
+              width: 100%;
+          }
+  
+          .cta-form {
+              margin-inline: 0;
+              max-width: unset;
+              width: 100%;
+          }
+  
+          .footer-brand-wrapper .logo {
+              margin: 0;
+          }
+  
+          .footer-brand-wrapper,
+          .quicklink-wrapper,
+          .footer-bottom .container {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+  
+          .quicklink-list {
+              margin-bottom: 0;
+          }
+  
+          .copyright {
+              margin-bottom: 0;
+          }
+  
+          .footer-bottom-img {
+              margin-inline: 0;
+          }
+      </style>
+  </head>
+  
 
 <body>
     <div class="container">
         <h1>Login</h1>
-        <label for="firstName">Votre prénom:</label>
+        <h2 id="profile-name"></h2>
         <input type="text" id="firstName" placeholder="Entrez votre prénom">
         <button onclick="saveName()">Se connecter</button>
         <button onclick="deleteName()">Supprimer le nom d'utilisateur</button> <!-- Bouton de suppression -->
@@ -209,88 +184,77 @@ button + button {
    
    <!-- Section historique -->
    <div id="history-section">
-    <h2>Le dernier films regardés  </h2>
+    <h2>Historiques  </h2>
     <div id="history-content">
         <!-- Le contenu de l'historique sera ajouté ici dynamiquement -->
     </div>
 
     <script>
-
-
- // Récupérer les données des favoris depuis le stockage local
- const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-// Sélectionner l'élément où vous souhaitez afficher les favoris
-const favoritePages = document.getElementById('favorite-pages');
-
-// Parcourir les données des favoris et les afficher
-favorites.forEach(favorite => {
-    const favoriteItem = document.createElement('div');
-    favoriteItem.classList.add('favorite-item'); // Ajouter une classe pour la mise en page
-    favoriteItem.innerHTML = `
-        <a href="${favorite.url}">
-            <img class="history-image" src="${favorite.image}" alt="">
-        </a>
-    `;
-    favoritePages.appendChild(favoriteItem);
-})
-        // Récupérer les données de la page "Cars Lecteur" depuis le stockage local
-        const pageData = JSON.parse(localStorage.getItem('pageData'));
-
-        // Vérifier si des données existent dans le stockage local
-        if (pageData) {
-            // Créer un élément pour afficher l'image et le lien vers la page "Cars Lecteur"
-            const historyItem = document.createElement('div');
-            historyItem.innerHTML = `
-                <a href="${pageData.url}">
-                    <img class="history-image" src="${pageData.image}" alt="Cars Lecteur">
-                </a>
-            `;
-            
-            // Ajouter l'élément à la section historique
-            const historyContent = document.getElementById('history-content');
-            historyContent.appendChild(historyItem);
-        }
-
-       // Récupérer les données des 3 derniers films regardés depuis le stockage local
-    const lastThreeWatched = JSON.parse(localStorage.getItem('watchHistory')) || [];
-    const lastThreeWatchedMovies = lastThreeWatched.slice(-3); // Récupérer les 3 derniers films
-
-    // Sélectionner l'élément où vous souhaitez afficher les 3 derniers films regardés
-    const recentlyWatchedContainer = document.getElementById('recently-watched');
-
-    // Afficher les détails des 3 derniers films regardés
-    lastThreeWatchedMovies.forEach(movie => {
-        const movieElement = document.createElement('div');
-        movieElement.innerHTML = `
-            <a href="${movie.url}">
-                <img src="${movie.image}" alt="${movie.title}">
-                <p>${movie.title}</p>
-            </a>
-        `;
-        recentlyWatchedContainer.appendChild(movieElement);
-    });
-
-        // Fonction pour enregistrer le prénom dans le stockage local
-        function saveName() {
-            var firstName = document.getElementById("firstName").value;
-            localStorage.setItem("firstName", firstName); // Enregistrer le prénom dans le stockage local
-            window.location.href = "index.html"; // Rediriger vers la page d'accueil après la connexion
-        }
-
-        // Fonction pour supprimer le nom d'utilisateur du stockage local
-        function deleteName() {
-            localStorage.removeItem("firstName"); // Supprimer le nom d'utilisateur du stockage local
-            window.location.href = "index.html"; // Rediriger vers la page d'accueil après avoir supprimé le nom d'utilisateur
-        }
-
-      // Fonction pour supprimer l'historique
+      // Récupérer les données des favoris depuis le stockage local
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  
+      // Sélectionner l'élément où vous souhaitez afficher les favoris
+      const favoritePages = document.getElementById('favorite-pages');
+  
+      // Parcourir les données des favoris et les afficher
+      favorites.forEach(favorite => {
+          const favoriteItem = document.createElement('div');
+          favoriteItem.classList.add('favorite-item'); // Ajouter une classe pour la mise en page
+          favoriteItem.innerHTML = `
+              <a href="${favorite.url}">
+                  <img class="history-image" src="${favorite.image}" alt="">
+              </a>
+          `;
+          favoritePages.appendChild(favoriteItem);
+      });
+  
+      // Récupérer les données de l'historique depuis le stockage local
+      const watchHistory = JSON.parse(localStorage.getItem('watchHistory')) || [];
+  
+      // Sélectionner l'élément où vous souhaitez afficher l'historique
+      const historyContent = document.getElementById('history-content');
+  
+      // Utiliser un objet pour filtrer les doublons basés sur la série et conserver le plus récent épisode
+      const uniqueHistory = {};
+      watchHistory.forEach(item => {
+          uniqueHistory[item.series] = item;
+      });
+  
+      // Afficher les données uniques de l'historique
+      Object.values(uniqueHistory).forEach(historyItem => {
+          const itemElement = document.createElement('div');
+          itemElement.innerHTML = `
+              <a href="${historyItem.url}">
+                  <img class="history-image" src="${historyItem.image}" alt="">
+                  <p>${historyItem.title}</p>
+              </a>
+          `;
+          historyContent.appendChild(itemElement);
+      });
+  
+      // Fonction pour enregistrer le prénom dans le stockage local
+      function saveName() {
+          var firstName = document.getElementById("firstName").value;
+          localStorage.setItem("firstName", firstName); // Enregistrer le prénom dans le stockage local
+          window.location.href = "index.html"; // Rediriger vers la page d'accueil après la connexion
+      }
+  
+      // Fonction pour supprimer le nom d'utilisateur du stockage local
+      function deleteName() {
+          localStorage.removeItem("firstName"); // Supprimer le nom d'utilisateur du stockage local
+          window.location.href = "index.html"; // Rediriger vers la page d'accueil après avoir supprimé le nom d'utilisateur
+      }
+  
+      // Fonction pour supprimer l'historique et les favoris
       function clearData() {
-            localStorage.removeItem('watchHistory'); // Supprimer les données de l'historique
-            // Rafraîchir la page pour refléter les changements
-            location.reload();
-        }
-    </script>
+          localStorage.removeItem('watchHistory'); // Supprimer les données de l'historique
+          localStorage.removeItem('favorites'); // Supprimer les favoris
+          location.reload(); // Rafraîchir la page pour refléter les changements
+      }
+  </script>
+  
+  
+    
 </body>
 
 </html>
