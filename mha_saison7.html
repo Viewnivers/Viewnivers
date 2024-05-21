@@ -210,9 +210,12 @@
   <div id="episode2" class="widget" style="display: none;">
     <iframe width="600" height="350" src="https://vidmoly.to/embed-yc00d8v4uwi8.html" frameborder="0" scrolling="no" allowfullscreen></iframe>
 </div>
+<div id="episode3" class="widget" style="display: none;">
+  <iframe width="600" height="350" src="https://vidmoly.to/embed-8y4hwai7i57y.html" frameborder="0" scrolling="no" allowfullscreen></iframe>
+</div>
 
    
-  
+
            
               </div>
             <div class="details-actions">
@@ -232,57 +235,79 @@
                 <select id="episode-select" onchange="changeEpisode()">
                     <option value="episode1">Épisode 1</option>
                     <option value="episode2">Épisode 2</option>
-                 
+                    <option value="episode3">Épisode 3</option>
                   
              </select>
               </div>
             </div>
 
             <script>
-                function changeEpisode() {
+              function changeEpisode() {
+                var select = document.getElementById("episode-select");
+                var selectedEpisode = select.options[select.selectedIndex].value;
+
+                // Cache tous les widgets
+                var allWidgets = document.querySelectorAll("#widget-container > div");
+                allWidgets.forEach(function (widget) {
+                  widget.style.display = "none";
+                });
+
+                // Affiche le widget associé à l'épisode sélectionné
+                var selectedWidget = document.getElementById(selectedEpisode);
+                selectedWidget.style.display = "block";
+
+                // Récupère la position de lecture depuis le stockage local
+                var storedPosition = localStorage.getItem(selectedEpisode + "_position");
+                if (storedPosition) {
+                  var videoElement = selectedWidget.querySelector("iframe");
+                  videoElement.src = videoElement.src + "#t=" + storedPosition;
+                }
+
+                // Stocke l'historique avec la logique de remplacement des doublons
+                var episodeData = {
+                  url: window.location.href.split('#')[0] + "#" + selectedEpisode,
+                  image: './assets/images/mha.jpg',
+                  title: "My Hero Academia Saison 7 - " + select.options[select.selectedIndex].text,
+                  series: "My Hero Academia"
+                };
+
+                var watchHistory = JSON.parse(localStorage.getItem('watchHistory')) || [];
+                watchHistory = watchHistory.filter(function (item) {
+                  return item.series !== episodeData.series;
+                });
+
+                watchHistory.push(episodeData);
+                localStorage.setItem('watchHistory', JSON.stringify(watchHistory));
+              }
+
+              function savePosition(episodeId) {
+                var videoElement = document.getElementById("video" + episodeId);
+                var currentPosition = videoElement.currentTime;
+                localStorage.setItem(episodeId + "_position", currentPosition);
+              }
+
+              window.onload = function () {
+                if (window.location.hash) {
+                  var episodeId = window.location.hash.substring(1);
+                  if (document.getElementById(episodeId)) {
+                    document.getElementById("episode-select").value = episodeId;
+                    changeEpisode();
+                  }
+                } else {
+                  changeEpisode();
+                }
+              };
+
+              document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "hidden") {
                   var select = document.getElementById("episode-select");
                   var selectedEpisode = select.options[select.selectedIndex].value;
-            
-                  // Cache tous les widgets
-                  var allWidgets = document.querySelectorAll("#widget-container > div");
-                  allWidgets.forEach(function (widget) {
-                    widget.style.display = "none";
-                  });
-            
-                  // Affiche le widget associé à l'épisode sélectionné
-                  var selectedWidget = document.getElementById(selectedEpisode);
-                  selectedWidget.style.display = "block";
-            
-                  // Récupère la position de lecture depuis le stockage local
-                  var storedPosition = localStorage.getItem(selectedEpisode + "_position");
-                  if (storedPosition) {
-                    // Applique la position de lecture à la vidéo
-                    var videoElement = selectedWidget.querySelector("iframe");
-                    videoElement.src = videoElement.src + "#t=" + storedPosition;
-                  }
+                  savePosition(selectedEpisode);
                 }
+              });
+            </script>
+          
             
-                // Enregistre la position de lecture lorsque la vidéo est mise en pause
-                function savePosition(episodeId) {
-                  var videoElement = document.getElementById("video" + episodeId);
-                  var currentPosition = videoElement.currentTime;
-                  localStorage.setItem(episodeId + "_position", currentPosition);
-                }
-            
-                // Appeler la fonction changeEpisode() pour afficher le premier épisode au chargement
-                window.onload = function () {
-                  changeEpisode();
-                };
-            
-                // Ajoute un gestionnaire d'événements pour enregistrer la position lors de la mise en pause de la vidéo
-                document.addEventListener("visibilitychange", function () {
-                  if (document.visibilityState === "hidden") {
-                    var select = document.getElementById("episode-select");
-                    var selectedEpisode = select.options[select.selectedIndex].value;
-                    savePosition(selectedEpisode);
-                  }
-                });
-              </script>
            
 
           </div>

@@ -294,50 +294,83 @@
             </div>
 
             <script>
-                function changeEpisode() {
+              function saveFavorite(url, image) {
+    const currentProfile = localStorage.getItem('currentProfile') || 'default';
+    const favorites = JSON.parse(localStorage.getItem(currentProfile + '_favorites')) || [];
+    favorites.push({ url, image });
+    localStorage.setItem(currentProfile + '_favorites', JSON.stringify(favorites));
+}
+
+function saveWatchHistory(url, image, title) {
+    const currentProfile = localStorage.getItem('currentProfile') || 'default';
+    const watchHistory = JSON.parse(localStorage.getItem(currentProfile + '_watchHistory')) || [];
+    watchHistory.push({ url, image, title });
+    localStorage.setItem(currentProfile + '_watchHistory', JSON.stringify(watchHistory));
+}
+              function changeEpisode() {
+                var select = document.getElementById("episode-select");
+                var selectedEpisode = select.options[select.selectedIndex].value;
+
+                // Cache tous les widgets
+                var allWidgets = document.querySelectorAll("#widget-container > div");
+                allWidgets.forEach(function (widget) {
+                  widget.style.display = "none";
+                });
+
+                // Affiche le widget associé à l'épisode sélectionné
+                var selectedWidget = document.getElementById(selectedEpisode);
+                selectedWidget.style.display = "block";
+
+                // Récupère la position de lecture depuis le stockage local
+                var storedPosition = localStorage.getItem(selectedEpisode + "_position");
+                if (storedPosition) {
+                  var videoElement = selectedWidget.querySelector("iframe");
+                  videoElement.src = videoElement.src + "#t=" + storedPosition;
+                }
+
+                // Stocke l'historique avec la logique de remplacement des doublons
+                var episodeData = {
+                  url: window.location.href.split('#')[0] + "#" + selectedEpisode,
+                  image: './assets/images/Halo-Portrait.jpg',
+                  title: "Halo Saison 1 - " + select.options[select.selectedIndex].text,
+                  series: "Halo"
+                };
+
+                var watchHistory = JSON.parse(localStorage.getItem('watchHistory')) || [];
+                watchHistory = watchHistory.filter(function (item) {
+                  return item.series !== episodeData.series;
+                });
+
+                watchHistory.push(episodeData);
+                localStorage.setItem('watchHistory', JSON.stringify(watchHistory));
+              }
+
+              function savePosition(episodeId) {
+                var videoElement = document.getElementById("video" + episodeId);
+                var currentPosition = videoElement.currentTime;
+                localStorage.setItem(episodeId + "_position", currentPosition);
+              }
+
+              window.onload = function () {
+                if (window.location.hash) {
+                  var episodeId = window.location.hash.substring(1);
+                  if (document.getElementById(episodeId)) {
+                    document.getElementById("episode-select").value = episodeId;
+                    changeEpisode();
+                  }
+                } else {
+                  changeEpisode();
+                }
+              };
+
+              document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "hidden") {
                   var select = document.getElementById("episode-select");
                   var selectedEpisode = select.options[select.selectedIndex].value;
-            
-                  // Cache tous les widgets
-                  var allWidgets = document.querySelectorAll("#widget-container > div");
-                  allWidgets.forEach(function (widget) {
-                    widget.style.display = "none";
-                  });
-            
-                  // Affiche le widget associé à l'épisode sélectionné
-                  var selectedWidget = document.getElementById(selectedEpisode);
-                  selectedWidget.style.display = "block";
-            
-                  // Récupère la position de lecture depuis le stockage local
-                  var storedPosition = localStorage.getItem(selectedEpisode + "_position");
-                  if (storedPosition) {
-                    // Applique la position de lecture à la vidéo
-                    var videoElement = selectedWidget.querySelector("iframe");
-                    videoElement.src = videoElement.src + "#t=" + storedPosition;
-                  }
+                  savePosition(selectedEpisode);
                 }
-            
-                // Enregistre la position de lecture lorsque la vidéo est mise en pause
-                function savePosition(episodeId) {
-                  var videoElement = document.getElementById("video" + episodeId);
-                  var currentPosition = videoElement.currentTime;
-                  localStorage.setItem(episodeId + "_position", currentPosition);
-                }
-            
-                // Appeler la fonction changeEpisode() pour afficher le premier épisode au chargement
-                window.onload = function () {
-                  changeEpisode();
-                };
-            
-                // Ajoute un gestionnaire d'événements pour enregistrer la position lors de la mise en pause de la vidéo
-                document.addEventListener("visibilitychange", function () {
-                  if (document.visibilityState === "hidden") {
-                    var select = document.getElementById("episode-select");
-                    var selectedEpisode = select.options[select.selectedIndex].value;
-                    savePosition(selectedEpisode);
-                  }
-                });
-              </script>
+              });
+            </script>
            
 
           </div>
