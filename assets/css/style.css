@@ -498,7 +498,7 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .hero {
-  background: url("../images/fallout.jpg") no-repeat;
+  background: url("../images/theacolyte.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 750px;
@@ -1611,4 +1611,37 @@ body.active { overflow: hidden; }
 
 .favorite .heart-icon {
   color: red; /* Couleur du cœur rempli lorsque le film est en favori */
+}
+
+.search-bar {
+  display: none;
+  position: relative;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background-color: #f0f0f0;
 }

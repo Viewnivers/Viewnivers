@@ -7,19 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viewnivers</title>
 
-  <!-- 
-    - favicon
-  -->
+  <!-- favicon -->
   <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
+  <!-- custom css link -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- 
-    - google font link
-  -->
+  <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,10 +21,7 @@
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!-- HEADER -->
   <header class="header" data-header>
     <div class="container">
 
@@ -42,29 +33,29 @@
 
       <div class="header-actions">
 
-        <button class="search-btn">
+        <button class="search-btn" onclick="toggleSearchBar()">
           <ion-icon name="search-outline"></ion-icon>
         </button>
+
+        <div class="search-bar" id="searchBar">
+          <input type="text" id="searchInput" placeholder="Rechercher..." oninput="searchMovies()">
+          <div class="suggestions" id="suggestions"></div>
+        </div>
 
         <div class="lang-wrapper">
           <label for="language">
             <ion-icon name="globe-outline"></ion-icon>
           </label>
-
           <select name="language" id="language">
             <option value="fr">FR</option>
-            
           </select>
         </div>
 
-        <!-- Votre contenu HTML va ici -->
-      
         <button class="btn btn-primary" onclick="window.location.href='login.html'">
           <span id="loginButtonLabel">Se connecter</span>
-      </button>
-      
-      <script src="script.js"></script>
-      
+        </button>
+
+        <script src="script.js"></script>
       </div>
 
       <button class="menu-open-btn" data-menu-open-btn>
@@ -72,76 +63,32 @@
       </button>
 
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-
           <a href="./index.html" class="logo">
             <img src="./assets/images/logo.png" alt="Filmlane logo" style="width:65px;height:60px;">
           </a>
-
           <button class="menu-close-btn" data-menu-close-btn>
             <ion-icon name="close-outline"></ion-icon>
           </button>
-
         </div>
 
-
-        
         <ul class="navbar-list">
-
-          <li>
-            <a href="./index.html" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="Movie.html" class="navbar-link">Movie</a>
-          </li>
-
-          <li>
-            <a href="Serie.html" class="navbar-link">Serie</a>
-          </li>
-
-          <li>
-            <a href="Anime.html" class="navbar-link">Anime</a>
-          </li>
-
-          <li>
-            <a href="tv.html" class="navbar-link">Tv</a>
-          </li>
-
+          <li><a href="./index.html" class="navbar-link">Home</a></li>
+          <li><a href="Movie.html" class="navbar-link">Movie</a></li>
+          <li><a href="Serie.html" class="navbar-link">Serie</a></li>
+          <li><a href="Anime.html" class="navbar-link">Anime</a></li>
+          <li><a href="tv.html" class="navbar-link">Tv</a></li>
         </ul>
 
         <ul class="navbar-social-list">
-
           <li>
             <button class="btn btn-primary" onclick="window.location.href='login.html'">
               <span id="loginButtonLabel">Se connecter</span>
-          </button>
-          <script src="script.js"></script>
-
+            </button>
+            <script src="script.js"></script>
           </li>
-
-          <li>
-           
-          </li>
-
-          <li>
-            
-          </li>
-
-          <li>
-            
-            </a>
-          </li>
-
-          <li>
-            
-          </li>
-
         </ul>
-
       </nav>
-
     </div>
   </header>
 
@@ -161,16 +108,16 @@
 
           <div class="hero-content">
 
-            <p class="hero-subtitle">Fallout</p>
+            <p class="hero-subtitle">Star Wars : The Acolyte</p>
 
             <h1 class="h1 hero-title">
-              La série <strong>du moment</strong>
+              Déjà <strong>disponible</strong>
             </h1>
 
             <div class="meta-wrapper">
 
               <div class="badge-wrapper">
-                <div class="badge badge-fill">PG 18</div>
+                <div class="badge badge-fill">PG 12</div>
 
                 <div class="badge badge-outline">HD</div>
               </div>
@@ -178,7 +125,9 @@
               <div class="ganre-wrapper">
                 <a href="#">Science fiction,</a>
 
-                <a href="#">Action</a>
+                <a href="#">Aventure,</a>
+
+                <a href="#">Thriller</a>
               </div>
 
               <div class="date-time">
@@ -199,7 +148,7 @@
 
             </div>
 
-            <button class="btn btn-primary" onclick="window.location.href='Fallout.html'">
+            <button class="btn btn-primary" onclick="window.location.href='Star Wars  The Acolyte.html'">
               <ion-icon name="play"></ion-icon>
               <span>Watch now</span>
             </button>
@@ -1005,6 +954,57 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const searchBtn = document.querySelector(".search-btn");
+  const searchBar = document.getElementById("searchBar");
+
+  searchBtn.addEventListener("click", function() {
+    searchBar.classList.toggle("visible");
+    if (searchBar.classList.contains("visible")) {
+      searchBar.style.display = "block";
+    } else {
+      searchBar.style.display = "none";
+    }
+  });
+});
+
+function searchMovies() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const suggestions = document.getElementById("suggestions");
+  suggestions.innerHTML = "";
+
+  if (query.length === 0) {
+    return;
+  }
+
+  const movies = [
+    "Star Wars  The Acolyte",
+    "Halo",
+    "Doctor Strange in the Multiverse of Madness",
+    "Cars",
+    "Oppenheimer",
+    "The Northman",
+    "Le Prestige",
+    "One Piece",
+    "Fallout",
+    "Dark",
+    "My Hero Academia"
+  ];
+
+  const filteredMovies = movies.filter(movie => movie.toLowerCase().includes(query));
+
+  filteredMovies.forEach(movie => {
+    const suggestionDiv = document.createElement("div");
+    suggestionDiv.textContent = movie;
+    suggestionDiv.addEventListener("click", function() {
+      window.location.href = movie.replace(/ /g, "%20") + ".html";
+    });
+    suggestions.appendChild(suggestionDiv);
+  });
+}
+
+  </script>
 
 </body>
 

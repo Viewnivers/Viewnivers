@@ -43,3 +43,4 @@ function updateFavoriteButton() {
 
 // Appel de la fonction updateFavoriteButton pour mettre à jour l'apparence du bouton lors du chargement de la page
 updateFavoriteButton();
+
