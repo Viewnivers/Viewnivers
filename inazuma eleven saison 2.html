@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inazuma Eleven Saison 2</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="#top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Image" style="width:65px;height:60px;">
+      </a>
+
+      <div class="header-actions">  
+
+      
+
+        <div class="lang-wrapper">
+          <label for="language">
+            <ion-icon name="globe-outline"></ion-icon>
+          </label>
+
+          <select name="language" id="language">
+            <option value="en">FR</option>
+            
+          </select>
+        </div>
+
+         <!-- Votre contenu HTML va ici -->
+      
+         <button class="btn btn-primary" onclick="window.location.href='login.html'">
+          <span id="loginButtonLabel">Se connecter</span>
+      </button>
+  
+      <script src="script.js"></script>
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" alt="Filmlane logo">
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="./index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="Movie.html" class="navbar-link">Movie</a>
+          </li>
+
+          <li>
+            <a href="Serie.html" class="navbar-link">Serie</a>
+          </li>
+
+          <li>
+            <a href="Anime.html" class="navbar-link">Anime</a>
+          </li>
+
+          <li>
+            <a href="tv.html" class="navbar-link">Tv</a>
+          </li>
+
+        </ul>
+
+        <ul class="navbar-social-list">
+
+          <li>
+            <button class="btn btn-primary" onclick="window.location.href='login.html'">
+              <span id="loginButtonLabel">Se connecter</span>
+          </button>
+          <script src="script.js"></script>
+          </li>
+
+          <li>
+          
+          </li>
+
+          <li>
+           
+          </li>
+
+          <li>
+           
+          </li>
+
+          <li>
+            
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #MOVIE DETAIL
+      -->
+
+      <section class="movie-detail">
+        <div class="container">
+
+          <figure class="movie-detail-banner">
+
+            <img src="./assets/images/inazuma eleven.webp" alt="Free guy movie poster">
+
+           
+
+          </figure>
+
+          <div class="movie-detail-content">
+
+            <p class="detail-subtitle"></p>
+
+            <h1 class="h1 detail-title">
+              Inazuma Eleven <strong>Saison 2</strong>
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <div class="badge badge-fill"></div>
+
+                <div class="badge badge-outline">HD</div>
+              </div>
+
+              <div class="ganre-wrapper">
+                <a href="#">Animation</a>
+
+                <a href="#"></a>
+
+                <a href="#"></a>
+
+                <a href="#"></a>
+              </div>
+
+              <div class="date-time">
+
+                <div>
+                  <ion-icon name="calendar-outline"></ion-icon>
+
+                  <time datetime="2008">2008-2011
+                  </time>
+                </div>
+
+                <div>
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <time datetime="PT115M">3 Saisons</time>
+                </div>
+
+              </div>
+
+              <div id="widget-container">
+                <!-- Génération des iframes pour chaque vidéo de la playlist -->
+                <div id="episode1" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/8wQC90bSYfA" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode2" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/3K32j_pksZs" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode3" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/bM2R0dqh4dw" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode4" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/DJnZ79uBD_c" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode5" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/fGWB1r8aSLU" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode6" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/TjfnG8EybaQ" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode7" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/8QEkQp6GSYU" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode8" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/izHJrx7vkvw" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode9" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/dkvEPC7cogc" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode10" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/HU1qz1MIeX0" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode11" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/VrDFk3-KA3M" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode12" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/LvNgvX7UiE0" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode13" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/nYkkAKmuhBw" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode14" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/GuoYYFI28_4" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode15" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/TQmnm0Krml4" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode16" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/IWnJTbKln0A" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode17" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/IR-SjbXGxIA" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode18" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/qzP3vcJVDI0" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode19" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/Ob-fAnj99gY" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode20" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/6pJg-sk32oo" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode21" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/ZPnqrWx1c5g" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode22" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/M0_drSlry7g" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode23" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/0NPYoaz5xlA" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode24" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/ALeuvKXrKrI" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode25" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/pUJSY3H_chI" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode26" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/Xb91OmWpuR0" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode27" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/OpR_fRjkzHk" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode28" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/e90KlnMwbFo" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode29" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/5NeJ0gNgTj0" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode30" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/nGf_7B8-xfw" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode31" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/_IF679yyWEA" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode32" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/rFrWmwIC6Cs" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode33" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/UHDMDK5dfkQ" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode34" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/2Q8RDAA981o" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode35" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/KvUCGDgWB-4" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode36" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/PlHwWedGMnw" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode37" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/jpUvLT7mdJg" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode38" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/Mz0Oo64jrZU" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode39" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/N6QENLyNmVE" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode40" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/ISg31up59Qc" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <div id="episode41" class="widget" style="display: none;">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/okSw73768-A" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="details-actions">
+                <div class="title-wrapper">
+                    <p class="title">Saison 2</p>
+                    <p class="text">41 épisodes disponibles</p>
+                </div>
+            
+                <div class="btn btn-primary">
+                    <label for="episode-select">Sélectionnez un épisode:</label>
+                    <select id="episode-select" onchange="changeEpisode()">
+                        <option value="episode1">Épisode 1</option>
+                        <option value="episode2">Épisode 2</option>
+                        <option value="episode3">Épisode 3</option>
+                        <option value="episode4">Épisode 4</option>
+                        <option value="episode5">Épisode 5</option>
+                        <option value="episode6">Épisode 6</option>
+                        <option value="episode7">Épisode 7</option>
+                        <option value="episode8">Épisode 8</option>
+                        <option value="episode9">Épisode 9</option>
+                        <option value="episode10">Épisode 10</option>
+                        <option value="episode11">Épisode 11</option>
+                        <option value="episode12">Épisode 12</option>
+                        <option value="episode13">Épisode 13</option>
+                        <option value="episode14">Épisode 14</option>
+                        <option value="episode15">Épisode 15</option>
+                        <option value="episode16">Épisode 16</option>
+                        <option value="episode17">Épisode 17</option>
+                        <option value="episode18">Épisode 18</option>
+                        <option value="episode19">Épisode 19</option>
+                        <option value="episode20">Épisode 20</option>
+                        <option value="episode21">Épisode 21</option>
+                        <option value="episode22">Épisode 22</option>
+                        <option value="episode23">Épisode 23</option>
+                        <option value="episode24">Épisode 24</option>
+                        <option value="episode25">Épisode 25</option>
+                        <option value="episode26">Épisode 26</option>
+                        <option value="episode27">Épisode 27</option>
+                        <option value="episode28">Épisode 28</option>
+                        <option value="episode29">Épisode 29</option>
+                        <option value="episode30">Épisode 30</option>
+                        <option value="episode31">Épisode 31</option>
+                        <option value="episode32">Épisode 32</option>
+                        <option value="episode33">Épisode 33</option>
+                        <option value="episode34">Épisode 34</option>
+                        <option value="episode35">Épisode 35</option>
+                        <option value="episode36">Épisode 36</option>
+                        <option value="episode37">Épisode 37</option>
+                        <option value="episode38">Épisode 38</option>
+                        <option value="episode39">Épisode 39</option>
+                        <option value="episode40">Épisode 40</option>
+                        <option value="episode41">Épisode 41</option>
+                    </select>
+                </div>
+            </div>
+
+              
+            
+                    
+             
+              
+
+            </div>
+
+            <script>
+              function saveFavorite(url, image) {
+    const currentProfile = localStorage.getItem('currentProfile') || 'default';
+    const favorites = JSON.parse(localStorage.getItem(currentProfile + '_favorites')) || [];
+    favorites.push({ url, image });
+    localStorage.setItem(currentProfile + '_favorites', JSON.stringify(favorites));
+}
+
+function saveWatchHistory(url, image, title) {
+    const currentProfile = localStorage.getItem('currentProfile') || 'default';
+    const watchHistory = JSON.parse(localStorage.getItem(currentProfile + '_watchHistory')) || [];
+    watchHistory.push({ url, image, title });
+    localStorage.setItem(currentProfile + '_watchHistory', JSON.stringify(watchHistory));
+}
+              function changeEpisode() {
+                var select = document.getElementById("episode-select");
+                var selectedEpisode = select.options[select.selectedIndex].value;
+
+                // Cache tous les widgets
+                var allWidgets = document.querySelectorAll("#widget-container > div");
+                allWidgets.forEach(function (widget) {
+                  widget.style.display = "none";
+                });
+
+                // Affiche le widget associé à l'épisode sélectionné
+                var selectedWidget = document.getElementById(selectedEpisode);
+                selectedWidget.style.display = "block";
+
+                // Récupère la position de lecture depuis le stockage local
+                var storedPosition = localStorage.getItem(selectedEpisode + "_position");
+                if (storedPosition) {
+                  var videoElement = selectedWidget.querySelector("iframe");
+                  videoElement.src = videoElement.src + "#t=" + storedPosition;
+                }
+
+                // Stocke l'historique avec la logique de remplacement des doublons
+                var episodeData = {
+                  url: window.location.href.split('#')[0] + "#" + selectedEpisode,
+                  image: './assets/images/inazuma eleven.webp',
+                  title: "Inazuma Eleven Saison 2 - " + select.options[select.selectedIndex].text,
+                  series: "Inazuma Eleven"
+                };
+
+                var watchHistory = JSON.parse(localStorage.getItem('watchHistory')) || [];
+                watchHistory = watchHistory.filter(function (item) {
+                  return item.series !== episodeData.series;
+                });
+
+                watchHistory.push(episodeData);
+                localStorage.setItem('watchHistory', JSON.stringify(watchHistory));
+              }
+
+              function savePosition(episodeId) {
+                var videoElement = document.getElementById("video" + episodeId);
+                var currentPosition = videoElement.currentTime;
+                localStorage.setItem(episodeId + "_position", currentPosition);
+              }
+
+              window.onload = function () {
+                if (window.location.hash) {
+                  var episodeId = window.location.hash.substring(1);
+                  if (document.getElementById(episodeId)) {
+                    document.getElementById("episode-select").value = episodeId;
+                    changeEpisode();
+                  }
+                } else {
+                  changeEpisode();
+                }
+              };
+
+              document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "hidden") {
+                  var select = document.getElementById("episode-select");
+                  var selectedEpisode = select.options[select.selectedIndex].value;
+                  savePosition(selectedEpisode);
+                }
+              });
+            </script>
+           
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+     
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  
+
+        <p class="copyright">
+          &copy; 2024 <a href="#">LesGeek's</a>. All Rights Reserved
+        </p>
+
+        
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    // Stocker l'image et l'URL dans le stockage local
+    const pageData = {
+        url: window.location.href,
+        image: './assets/images/inazuma eleven.webp' // Chemin vers l'image sur votre serveur
+    };
+    localStorage.setItem('pageData', JSON.stringify(pageData));
+</script>
+</body>
+
+</html>
