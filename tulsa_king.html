@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tulsa King</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="#top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Image" style="width:65px;height:60px;">
+      </a>
+
+      <div class="header-actions">  
+
+        
+
+        <div class="lang-wrapper">
+          <label for="language">
+            <ion-icon name="globe-outline"></ion-icon>
+          </label>
+
+          <select name="language" id="language">
+            <option value="en">FR</option>
+            
+          </select>
+        </div>
+
+        <button class="btn btn-primary" onclick="window.location.href='login.html'">
+          <span id="loginButtonLabel">Se connecter</span>
+      </button>
+  
+      <script src="script.js"></script>
+
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" alt="Filmlane logo">
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="./index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="Movie.html" class="navbar-link">Movie</a>
+          </li>
+
+          <li>
+            <a href="Serie.html" class="navbar-link">Serie</a>
+          </li>
+
+          <li>
+            <a href="Anime.html" class="navbar-link">Anime</a>
+          </li>
+
+          <li>
+            <a href="tv.html" class="navbar-link">Tv</a>
+          </li>
+
+        </ul>
+
+        <ul class="navbar-social-list">
+
+          <li>
+            <button class="btn btn-primary" onclick="window.location.href='login.html'">
+              <span id="loginButtonLabel">Se connecter</span>
+          </button>
+          </li>
+
+          <li>
+            
+          </li>
+
+          <li>
+          
+          </li>
+
+          <li>
+           
+          </li>
+
+          <li>
+            
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+<body>
+  <main>
+    <article>
+      <section class="movie-detail">
+        <div class="container">
+          <figure class="movie-detail-banner">
+            <img src="./assets/images/tulsa_saison1.jfif" alt="Tulsa King movie poster">
+          </figure>
+          <div class="movie-detail-content">
+            <h1 class="h1 detail-title">Tulsa King</h1>
+            <div class="meta-wrapper">
+              <div class="badge badge-outline">HD</div>
+              <div class="date-time">
+                <div>
+                  <ion-icon name="calendar-outline"></ion-icon>
+                  <time datetime="2024">2024</time>
+                </div>
+                <div>
+                  <ion-icon name="time-outline"></ion-icon>
+                  <time datetime="PT2M">2 Saisons</time>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="storyline">Fraîchement libéré de prison après une peine de 25 ans, l'ex-parrain de la mafia new-yorkaise Dwight Manfredi, dit "Le Général", se fait virer sans cérémonie par un baron du crime. Exilé à Tulsa, en Oklahoma, Dwight décide de constituer sa propre équipe avec une brochette de personnages hauts en couleur. Parviendra-t-il à rebâtir un nouvel empire du crime dans un lieu aussi improbable</p>
+            </div>
+            <div class="details-actions">
+
+                <div class="title-wrapper">
+                  <p class="title">Saison 1</p>
+                  <p class="text">Streaming Channels</p>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='tulsa_king_saison_1.html'">
+                  <ion-icon name="play"></ion-icon>
+                  <span>Watch now</span>
+                </button>
+
+                <div class="title-wrapper">
+                  <p class="title">Saison 2</p>
+                  <p class="text">Streaming Channels</p>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='tulsa_king_saison_2.html'">
+                  <ion-icon name="play"></ion-icon>
+                  <span>Watch now</span>
+                </button>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
