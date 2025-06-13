@@ -45,3 +45,34 @@ function updateFavoriteButton() {
 // Appel de la fonction updateFavoriteButton pour mettre à jour l'apparence du bouton lors du chargement de la page
 updateFavoriteButton();
 
+function checkLoginStatus() {
+    const loginLogoutButton = document.getElementById('loginLogoutButton');
+    const profilNavItem = document.getElementById('profilNavItem');
+    const userRole = localStorage.getItem('userRole');
+
+    if (userRole) {
+        loginLogoutButton.textContent = 'Se déconnecter';
+        profilNavItem.style.display = 'block';
+    } else {
+        loginLogoutButton.textContent = 'Se connecter';
+        profilNavItem.style.display = 'none';
+    }
+}
+
+// Add this event listener after the checkLoginStatus function
+document.addEventListener('DOMContentLoaded', () => {
+    const loginLogoutButton = document.getElementById('loginLogoutButton');
+
+    if (loginLogoutButton) {
+        loginLogoutButton.addEventListener('click', () => {
+            if (loginLogoutButton.textContent === 'Se déconnecter') {
+                localStorage.removeItem('userRole');
+                window.location.href = 'index.html';
+            }
+        });
+    }
+});
+
+
+// Call checkLoginStatus on page load
+checkLoginStatus();
