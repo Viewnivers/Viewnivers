@@ -1,5 +1,6 @@
 // script.js
 window.onload = function() {
+    checkLoginStatus(); // Check login status on page load
     var firstName = localStorage.getItem("firstName");
     if (firstName) {
         document.getElementById("loginButtonLabel").textContent = "Bienvenue, " + firstName; // Afficher le prénom dans le bouton de connexion
