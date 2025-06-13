@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $users_js_content = file_get_contents('users.js');
 
     // Extract the array part from the JS file content
-    $users_array_string = preg_replace('/^\s*export\s+const\s+users\s*=\s*/', '', $users_js_content);
+    $users_array_string = preg_replace('/^\s*const\s+users\s*=\s*/', '', $users_js_content);
     $users_array_string = preg_replace('/;\s*$/', '', $users_array_string);
 
     $users = json_decode($users_array_string, true);
