@@ -5,12 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // Read user data from users.js
-    $users_js_content = file_get_contents('users.js');
-
-    // Extract the array part from the JS file content
-    $users_array_string = preg_replace('/^\s*const\s+users\s*=\s*/', '', $users_js_content);
-    $users_array_string = preg_replace('/;\s*$/', '', $users_array_string);
+    // Read user data from users.json
+    $users_array_string = file_get_contents('/var/www/html/users.json');
 
     $users = json_decode($users_array_string, true);
 
