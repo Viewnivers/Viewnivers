@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendeur Panel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="header" data-header>
+        <div class="container">
+
+          <div class="overlay" data-overlay></div>
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" alt="Filmlane logo">
+          </a>
+
+          <div class="header-actions">
+
+            <button class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+
+            <div class="lang-wrapper">
+              <label for="language">
+                <ion-icon name="globe-outline"></ion-icon>
+              </label>
+
+              <select name="language" id="language">
+                <option value="en">EN</option>
+                <option value="au">AU</option>
+                <option value="fn">FN</option>
+                <option value="hn">HN</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary">Connecter</button>
+
+          </div>
+
+          <button class="menu-open-btn" data-menu-open-btn>
+            <ion-icon name="reorder-outline"></ion-icon>
+          </button>
+
+          <nav class="navbar" data-navbar>
+
+            <div class="navbar-top">
+
+              <a href="./index.html" class="logo">
+                <img src="./assets/images/logo.svg" alt="Filmlane logo">
+              </a>
+
+              <button class="menu-close-btn" data-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+            </div>
+
+            <ul class="navbar-list">
+
+              <li>
+                <a href="./index.html" class="navbar-link">Accueil</a>
+              </li>
+
+              <li>
+                <a href="./Movie.html" class="navbar-link">Films</a>
+              </li>
+
+              <li>
+                <a href="./Serie.html" class="navbar-link">Series</a>
+              </li>
+
+              <li>
+                <a href="./tv.html" class="navbar-link">Tv</a>
+              </li>
+
+            </ul>
+
+            <ul class="navbar-social-list">
+
+              <li>
+                <a href="#" class="navbar-social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+        </div>
+      </header>
+
+    <main>
+        <article>
+            <section class="vendeur-panel">
+                <div class="container">
+                    <h2 class="h2 section-title">Vendeur Panel</h2>
+
+                    <form id="addUserForm" class="form-control">
+                        <h3>Add New User</h3>
+                        <div>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <div>
+                            <label for="role">Role:</label>
+                            <select id="role" required>
+                                <option value="ViewTV">ViewTV</option>
+                                <option value="VODnivers">VODnivers</option>
+                                <option value="ALLNivers">ALLNivers</option>
+                                <option value="vendeur">vendeur</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </form>
+
+                    <div class="user-list">
+                        <h3>Existing Users</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Role</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                                <!-- User rows will be populated here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-top">
+          <div class="container">
+
+            <div class="footer-brand-wrapper">
+
+              <a href="./index.html" class="logo">
+                <img src="./assets/images/logo.svg" alt="Filmlane logo">
+              </a>
+
+              <address class="footer-text">
+                155, Avenue de la République, 33000 Bordeaux
+              </address>
+
+            </div>
+
+            <div class="footer-link-wrapper">
+
+              <div class="title-wrapper">
+                <h3 class="footer-title">Company</h3>
+              </div>
+
+              <ul class="footer-list">
+
+                <li>
+                  <a href="./index.html" class="footer-link">About Us</a>
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link">Contact Us</a>
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link">Tv Show</a>
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link">Blog</a>
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link">Themezinho</a>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="footer-link-wrapper">
+
+              <div class="title-wrapper">
+                <h3 class="footer-title">Legal</h3>
+              </div>
+
+              <ul class="footer-list">
+
+                <li>
+                  <a href="#" class="footer-link">Terms of Use</a>
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link">Privacy Policy</a>
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link">Security</a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+
+            <p class="copyright">
+              &copy; 2022 <a href="#">Filmlane</a>. All Rights Reserved
+            </p>
+
+            <img src="./assets/images/footer-bottom-img.png" alt="Dilmil logo" class="footer-bottom-img">
+
+          </div>
+        </div>
+
+      </footer>
+
+
+
+
+
+      <!--
+        - #GO TO TOP
+      -->
+
+      <a href="#top" class="go-top" data-go-top>
+        <ion-icon name="chevron-up-outline"></ion-icon>
+      </a>
+
+
+
+
+
+      <!--
+        - custom js link
+      -->
+      <script src="./assets/js/script.js"></script>
+
+      <!--
+        - ionicon link
+      -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="vendeur.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+const users = [
+    {
+        username: 'vendeur1',
+        password: 'password123',
+        role: 'vendeur'
+    },
+    {
+        username: 'viewtvuser',
+        password: 'tvpassword',
+        role: 'ViewTV'
+    },
+    {
+        username: 'voduser',
+        password: 'vodpassword',
+        role: 'VODnivers'
+    },
+    {
+        username: 'alluser',
+        password: 'allpassword',
+        role: 'ALLNivers'
+    }
+];
