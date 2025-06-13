@@ -22,7 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($authenticated_user) {
         $_SESSION['userRole'] = $authenticated_user['role'];
-        header('Location: /index.html'); // Redirect to index.html
+        echo "<script>
+            localStorage.setItem('userRole', '" . $authenticated_user['role'] . "');
+            localStorage.setItem('firstName', '" . $authenticated_user['username'] . "');
+            window.location.href = '/index.html';
+        </script>";
+    exit();
+
         exit();
     } else {
         $error_message = 'Invalid username or password.';
