@@ -1,4 +1,39 @@
 php
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    // Read user data from users.js
+    $users_js_content = file_get_contents('/mnt/data/users.js');
+
+    // Extract the array part from the JS file content
+    $users_array_string = preg_replace('/^\s*export\s+const\s+users\s*=\s*/', '', $users_js_content);
+    $users_array_string = preg_replace('/;\s*$/', '', $users_array_string);
+
+    $users = json_decode($users_array_string, true);
+
+    $authenticated_user = null;
+    if ($users) {
+        foreach ($users as $user) {
+            if ($user['username'] === $username && $user['password'] === $password) {
+                $authenticated_user = $user;
+                break;
+            }
+        }
+    }
+
+    if ($authenticated_user) {
+        $_SESSION['userRole'] = $authenticated_user['role'];
+        header('Location: /index.html'); // Redirect to index.html
+        exit();
+    } else {
+        $error_message = 'Invalid username or password.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,46 +49,53 @@ php
 
     <style>
         body {
-            display: flex; /* Assuming your index.html body has display: flex */
+            background-color: hsl(207, 19%, 11%); /* Eerie Black from your CSS variables */
+            color: hsl(0, 100%, 100%); /* White from your CSS variables */
+            display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: var(--background);
-            color: var(--white);
         }
         .login-container {
-            background-color: var(--eerie-black-4);
+            background-color: hsl(228, 13%, 15%); /* Raisin Black from your CSS variables */
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
+            max-width: 400px; /* Added max-width for better form sizing */
+            width: 90%; /* Added width for responsiveness */
         }
         .login-container h2 {
             margin-bottom: 20px;
-            color: var(--white);
+            color: hsl(0, 100%, 100%); /* White */
         }
         .login-form input[type="text"],
         .login-form input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px 15px; /* Adjusted padding */
             margin-bottom: 15px;
-            border: 1px solid var(--eerie-black-3);
+            border: 1px solid hsl(0, 0%, 20%); /* Jet from your CSS variables */
             border-radius: 5px;
-            background-color: var(--eerie-black-3);
-            color: var(--white);
+            background-color: hsl(229, 15%, 21%); /* Gunmetal-1 from your CSS variables */
+            color: hsl(0, 100%, 100%); /* White */
+            font-size: 16px; /* Adjusted font size */
         }
-        .login-form button {
+        .login-form button[type="submit"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px 15px; /* Adjusted padding */
             border: none;
-            border-radius: 5px;
-            background-color: var(--royal-blue);
-            color: var(--white);
+            border-radius: 50px; /* Rounded corners like in your site */
+            background-color: #FF8C00; /* Citrine from your CSS variables */
+            color: hsl(253, 21%, 13%); /* Xiketic from your CSS variables */
+            font-size: 14px; /* Adjusted font size */
+            font-weight: 700; /* Bold font weight */
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .login-form button:hover {
-            background-color: var(--bluish);
+        .login-form button[type="submit"]:hover {
+             background-color: #e67e00; /* Slightly darker orange on hover */
         }
         .error-message {
             color: red;
@@ -132,7 +174,6 @@ php
  <main>
  <article>
 
- <!-- Assuming your main content is wrapped in a section -->
  <section class="section">
     <div class="login-container">
         <h2>Login</h2>
@@ -142,41 +183,9 @@ php
             <button type="submit">Login</button>
         </form>
         <?php
- if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $username = $_POST['username'] ?? '';
-                $password = $_POST['password'] ?? '';
-
-                // Start session
-                session_start();
-
-                // Read user data from users.js
-                $users_js_content = file_get_contents('/mnt/data/users.js');
-
-                // Extract the array part from the JS file content
-                // This is a basic approach and might need refinement based on the exact users.js format
-                $users_array_string = preg_replace('/^\s*export\s+const\s+users\s*=\s*/', '', $users_js_content);
-                $users_array_string = preg_replace('/;\s*$/', '', $users_array_string);
-
-                $users = json_decode($users_array_string, true);
-
-                $authenticated_user = null;
-                if ($users) {
-                    foreach ($users as $user) {
-                        if ($user['username'] === $username && $user['password'] === $password) {
-                            $authenticated_user = $user;
-                            break;
-                        }
-                    }
+ if (isset($error_message)) {
+                    echo '<p class="error-message">' . $error_message . '</p>';
                 }
-
-                if ($authenticated_user) {
-                    $_SESSION['userRole'] = $authenticated_user['role'];
-                    header('Location: /index.html'); // Redirect to index.html
-                    exit();
-                } else {
-                    echo '<p class="error-message">Invalid username or password.</p>';
-                }
-            }
         ?>
     </div>
  </section>
